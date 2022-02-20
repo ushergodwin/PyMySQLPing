@@ -1,1 +1,2 @@
-# PyMySQLPing, MySQL Database wrapper for interucting with mysql
+# PyMySQLPing, 
+## MySQL Database wrapper for interacting with MySQL
