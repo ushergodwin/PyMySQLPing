@@ -3,7 +3,12 @@ from Query.pyMySQLQueryBuilder import pyMySQLQueryBuilder
 
 
 class pyMySQLPing(pyMySQLQueryBuilder, pyMySQLConnect):
-
+    
+    def all(self, columns:str="*"):
+        return self.get(columns=columns)
+        
+    
+    
     def get(self, columns:str="*"):
         """Return a dict or a list of dicts
 
@@ -15,12 +20,10 @@ class pyMySQLPing(pyMySQLQueryBuilder, pyMySQLConnect):
         """
         self._connect()
         query = self._build_query(columns=columns)
-
         if self._find_one:
             return self._fetch_one(query, self._db.cursor())
         
         return self._fetch_all(query=query, cursor=self._db.cursor())
-        
     
     def _fetch_all(self, query, cursor):
         if len(self._query_data) > 0:

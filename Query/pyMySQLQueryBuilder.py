@@ -8,7 +8,7 @@ class pyMySQLQueryBuilder:
     _find_one = False
     _is_aggregate = False
     
-    def modal(self, name:str):
+    def model(self, name:str):
         """Entry Point to the database modal
 
         Args:
